@@ -12,4 +12,6 @@
     <p>Status : {{ serverStatus }}</p>
 
     <p>Status (using Method): {{ getServerStatus() }}</p>
+
+    <button class="btn btn-primary" [disabled]="!allowServer">Property Binding</button>
 </div>
