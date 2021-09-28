@@ -7,11 +7,39 @@
 ">
     <p>This is the server component.</p>
 
+    <!-- string interpolation -->
     <p>ID : {{ serverID }}</p>
     
     <p>Status : {{ serverStatus }}</p>
 
     <p>Status (using Method): {{ getServerStatus() }}</p>
 
-    <button class="btn btn-primary" [disabled]="!allowServer">Property Binding</button>
+    <!-- property binding -->
+    <button 
+    class="btn btn-primary" 
+    [disabled]="!allowServer"
+    (click)="onCreateServer()"
+    >
+        Add Server
+    </button>
+    
+    <p [innerText]="allowServer"></p>
+
+    <!-- event binding -->
+    <p>{{ createServer }}</p>
+
+    <!-- passing and using data with event binding -->
+    <input type="text" class="form-control"
+    style="width: 10rem;"
+    (input) = "onUpdateServerName($event)"
+    >
+    <p>{{ serverName }}</p>
+
+    <!-- 2 way data binding (FormsModule req.) -->
+    <input type="text" class="form-control"
+    style="width: 10rem;"
+    [(ngModel)] = "serverName"
+    >
+    <p>{{ serverName }}</p>
+
 </div>

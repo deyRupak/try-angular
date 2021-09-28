@@ -25,4 +25,16 @@ export class ServerComponent implements OnInit{
     ngOnInit(){
 
     }
+
+    // event binding
+    createServer = "No server was created"
+    onCreateServer(){
+        this.createServer = "Server was created!"
+    }
+
+    // passing data with event binding
+    serverName = "initServer"
+    onUpdateServerName(event : Event){
+        this.serverName = (<HTMLInputElement>event.target).value;
+    }
 }
