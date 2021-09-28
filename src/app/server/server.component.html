@@ -1,3 +1,15 @@
-<p>
-    This is the server component
-</p>
+<div style="
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+">
+    <p>This is the server component.</p>
+
+    <p>ID : {{ serverID }}</p>
+    
+    <p>Status : {{ serverStatus }}</p>
+
+    <p>Status (using Method): {{ getServerStatus() }}</p>
+</div>

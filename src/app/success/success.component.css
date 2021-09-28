@@ -1,3 +1,9 @@
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 p {
     color:rgb(100, 235, 118)
 }

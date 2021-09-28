@@ -1,3 +1,10 @@
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
 h4 {
     color :rgb(218, 35, 65)
 }
