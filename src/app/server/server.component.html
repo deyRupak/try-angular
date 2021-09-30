@@ -1,63 +1,93 @@
-<div style="
+<div>
+
+<div class="row">
+
+    <div class="col-6"
+    style="
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     padding: 2rem 0;
-">
-    <p>This is the server component.</p>
+    ">
+        <p>This is the server component.</p>
 
-    <!-- string interpolation -->
-    <p>ID : {{ serverID }}</p>
+        <!-- string interpolation -->
+        <p>ID : {{ serverID }}</p>
+        
+        <p>Status : {{ serverStatus }}</p>
+
+        <p>Status (using Method): {{ getServerStatus() }}</p>
+
+
+        <!-- passing and using data with event binding -->
+        <input type="text" class="form-control"
+        style="width: 10rem;"
+        (input) = "onUpdateServerName($event)"
+        >
+        <p>{{ serverName }}</p>
+
+        <!-- 2 way data binding (FormsModule req.) -->
+        <input type="text" class="form-control"
+        style="width: 10rem;"
+        [(ngModel)] = "serverName"
+        >
+        <!-- <p>{{ serverName }}</p> -->
+
+
+        <!-- property binding -->
+        <button 
+        class="btn btn-primary" 
+        [disabled]="!allowServer"
+        (click)="onCreateServer()"
+        style="margin-top: 1rem;"
+        >
+            Add Server
+        </button>
+        
+        <p [innerText]="allowServer"></p>
+
+        <!-- event binding -->
+        <p>{{ createServer }}</p>
+    </div>
+
     
-    <p>Status : {{ serverStatus }}</p>
+    <div class="col-6"
+    style="
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+    ">
+        <p>Assignment 2</p>
+        <input type="text"
+        class="form-control"
+        style="width: 10rem;"
+        [(ngModel)] = "getOutput"
+        >
+        <p>{{ getOutput }}</p>
 
-    <p>Status (using Method): {{ getServerStatus() }}</p>
+        <button class="btn btn-primary"
+        style="margin-bottom: 1rem;"
+        [disabled] = "!getOutput"
+        (click) = "resetInput()"
+        >
+            Reset Input
+        </button>
 
+        <p *ngIf="ifElse; else elseCond">If Condition executed</p>
+        <ng-template #elseCond>
+            <p>Else Condition executed</p>
+        </ng-template>
+        <button class="btn btn-primary" 
+        style="margin-top: 1rem;"
+        (click)="changeCondition()">
+            Click to change condition
+        </button>
 
-    <!-- passing and using data with event binding -->
-    <input type="text" class="form-control"
-    style="width: 10rem;"
-    (input) = "onUpdateServerName($event)"
-    >
-    <p>{{ serverName }}</p>
+    </div>
 
-    <!-- 2 way data binding (FormsModule req.) -->
-    <input type="text" class="form-control"
-    style="width: 10rem;"
-    [(ngModel)] = "serverName"
-    >
-    <!-- <p>{{ serverName }}</p> -->
+</div>
 
-
-    <!-- property binding -->
-    <button 
-    class="btn btn-primary" 
-    [disabled]="!allowServer"
-    (click)="onCreateServer()"
-    style="margin-top: 1rem;"
-    >
-        Add Server
-    </button>
-    
-    <p [innerText]="allowServer"></p>
-
-    <!-- event binding -->
-    <p>{{ createServer }}</p>
-
-
-    <p>Assignment 2</p>
-    <input type="text"
-    class="form-control"
-    style="width: 10rem;"
-    [(ngModel)] = "getOutput"
-    >
-    <p>{{ getOutput }}</p>
-
-    <button class="btn btn-primary"
-    [disabled] = "!getOutput"
-    (click) = "resetInput()"
-    >
-        Reset Input
-    </button>
 </div>

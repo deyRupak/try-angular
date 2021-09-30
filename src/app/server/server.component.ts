@@ -43,4 +43,15 @@ export class ServerComponent implements OnInit{
     resetInput(){
         this.getOutput = ""
     }
+
+    // if-else condition
+    ifElse = false
+    changeCondition(){
+        if (this.ifElse){
+            this.ifElse = false
+        }
+        else {
+            this.ifElse = true
+        }
+    }
 }
