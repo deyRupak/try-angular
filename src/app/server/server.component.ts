@@ -29,12 +29,18 @@ export class ServerComponent implements OnInit{
     // event binding
     createServer = "No server was created"
     onCreateServer(){
-        this.createServer = "Server was created!"
+        this.createServer = "Server was created! " + this.serverName
     }
 
     // passing data with event binding
     serverName = "initServer"
     onUpdateServerName(event : Event){
         this.serverName = (<HTMLInputElement>event.target).value;
+    }
+
+    // assignment 2
+    getOutput = ""
+    resetInput(){
+        this.getOutput = ""
     }
 }

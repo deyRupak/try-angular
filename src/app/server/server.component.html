@@ -14,19 +14,6 @@
 
     <p>Status (using Method): {{ getServerStatus() }}</p>
 
-    <!-- property binding -->
-    <button 
-    class="btn btn-primary" 
-    [disabled]="!allowServer"
-    (click)="onCreateServer()"
-    >
-        Add Server
-    </button>
-    
-    <p [innerText]="allowServer"></p>
-
-    <!-- event binding -->
-    <p>{{ createServer }}</p>
 
     <!-- passing and using data with event binding -->
     <input type="text" class="form-control"
@@ -40,6 +27,37 @@
     style="width: 10rem;"
     [(ngModel)] = "serverName"
     >
-    <p>{{ serverName }}</p>
+    <!-- <p>{{ serverName }}</p> -->
 
+
+    <!-- property binding -->
+    <button 
+    class="btn btn-primary" 
+    [disabled]="!allowServer"
+    (click)="onCreateServer()"
+    style="margin-top: 1rem;"
+    >
+        Add Server
+    </button>
+    
+    <p [innerText]="allowServer"></p>
+
+    <!-- event binding -->
+    <p>{{ createServer }}</p>
+
+
+    <p>Assignment 2</p>
+    <input type="text"
+    class="form-control"
+    style="width: 10rem;"
+    [(ngModel)] = "getOutput"
+    >
+    <p>{{ getOutput }}</p>
+
+    <button class="btn btn-primary"
+    [disabled] = "!getOutput"
+    (click) = "resetInput()"
+    >
+        Reset Input
+    </button>
 </div>
