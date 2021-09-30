@@ -51,7 +51,7 @@
         <p>{{ createServer }}</p>
     </div>
 
-    
+
     <div class="col-6"
     style="
     display: flex;
@@ -76,6 +76,7 @@
             Reset Input
         </button>
 
+        <!-- if else condition -->
         <p *ngIf="ifElse; else elseCond">If Condition executed</p>
         <ng-template #elseCond>
             <p>Else Condition executed</p>
@@ -86,6 +87,24 @@
             Click to change condition
         </button>
 
+        <!-- ngStyle -->
+        <p [ngStyle]="{backgroundColor: getFont()}"
+        [ngClass]="{one: fontColor === 'yes'}"
+        style="margin-top: 1rem;"
+
+        >
+            Dynamic Styling
+        </p>
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
     </div>
 
 </div>

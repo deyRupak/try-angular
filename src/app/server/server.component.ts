@@ -1,8 +1,15 @@
+import { style } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: 'app-server',
-    templateUrl: './server.component.html'
+    templateUrl: './server.component.html',
+    styles: [`
+        .one {
+            color: white;
+        }
+
+    `]
 })
 
 export class ServerComponent implements OnInit{
@@ -16,10 +23,21 @@ export class ServerComponent implements OnInit{
 
 
     allowServer = false
+
+    // dynamic styling
+    fontColor = ""
+
     constructor() {
         setTimeout(()=>{
             this.allowServer = true;
         }, 6000)
+
+        this.fontColor = Math.random() > 0.5 ? 'yes' : 'no'
+    }
+
+    // dynamic styling
+    getFont(){
+        return this.fontColor === 'yes' ? 'green' : 'red'
     }
 
     ngOnInit(){
@@ -54,4 +72,7 @@ export class ServerComponent implements OnInit{
             this.ifElse = true
         }
     }
+
+    
+    
 }
