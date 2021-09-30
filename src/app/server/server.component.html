@@ -91,11 +91,16 @@
         <p [ngStyle]="{backgroundColor: getFont()}"
         [ngClass]="{one: fontColor === 'yes'}"
         style="margin-top: 1rem;"
-
         >
             Dynamic Styling
         </p>
     
+        <!-- assignment 3 -->
+        <p *ngFor="let click of clicks"
+        [ngStyle]="{backgroundColor: click >= 5 ? 'blue' : 'white'}"
+        >
+            {{click}}
+        </p>
         
     
     

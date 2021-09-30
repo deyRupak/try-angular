@@ -9,6 +9,11 @@ import { Component, OnInit } from "@angular/core";
             color: white;
         }
 
+        .list {
+            backgroundColor: blue;
+            font: white;
+        }
+
     `]
 })
 
@@ -64,14 +69,21 @@ export class ServerComponent implements OnInit{
 
     // if-else condition
     ifElse = false
+    clicks = []
+    
     changeCondition(){
+        this.clicks.push(this.clicks.length + 1)
         if (this.ifElse){
             this.ifElse = false
         }
         else {
             this.ifElse = true
         }
+        return this.clicks
     }
+
+
+    
 
     
     
