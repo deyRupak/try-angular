@@ -328,6 +328,17 @@
       *ngFor="let serverElement of serverElements"
       [srvElement]="serverElement"
       >
+
+        <!-- being taken care by ng-content -->
+        <p>
+            <strong *ngIf="serverElement.type === 'server'" style="color: red;">
+                {{serverElement.content}}
+            </strong>
+            <em *ngIf="serverElement.type === 'blueprint'">
+                {{serverElement.content}}
+            </em>
+        </p>
+        
       </app-server-element>
     </div>
   </div>
