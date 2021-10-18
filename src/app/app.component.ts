@@ -35,18 +35,23 @@ export class AppComponent {
 
   // Assignment 4
 
-  oddNumber: number[] = []
-  evenNumber: number[] = []
+  // oddNumber: number[] = []
+  // evenNumber: number[] = []
   
-  onIntervalFired(firedNumber: number){
-    if (firedNumber%2 === 0){
-      this.evenNumber.push(firedNumber)
-    }
-    else{
-      this.oddNumber.push(firedNumber) 
-    }
-  }
+  // onIntervalFired(firedNumber: number){
+  //   if (firedNumber%2 === 0){
+  //     this.evenNumber.push(firedNumber)
+  //   }
+  //   else{
+  //     this.oddNumber.push(firedNumber) 
+  //   }
+  // }
 
+  oddNumbers= [1,3,5]
+  evenNumbers = [2,4,6]
+  onlyOdd = false
+
+  value = 10
 
 
 

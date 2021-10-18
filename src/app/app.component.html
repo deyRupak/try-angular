@@ -52,5 +52,45 @@
 <!-- custom attribute directive -->
 <div>
   <p appBasicHighlight>Styled with Custom Attribute Directive : Basic Highlight</p>
-  <p appBetterHighlight>Styled with Custom Attribute Directive : Better Highlight</p>
+  <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">
+    Styled with Custom Attribute Directive : Better Highlight
+  </p>
 </div>  
+
+<!-- custom structural directive -->
+<div *appUnless="onlyOdd">
+  <li
+  class="list-group-item"
+  [ngClass] = "{odd: even %2 !===0}"
+  [ngStyle] = "{backgroundColor: even%2 !=== 0 ? 'yellow' : 'transparent'}"
+  *ngFor = "let even of evenNumbers"
+  >
+    {{even}}
+  </li>
+</div>
+
+<!-- ngSwitch Directive -->
+<div [ngSwitch] = "value">
+  <p *ngSwitchCase="5">value is 5</p>
+  <p *ngSwitchCase="10">value is 10</p>
+  <p *ngSwitchCase="100">value is 100</p>
+  <p *ngSwitchDefault>value is default</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
