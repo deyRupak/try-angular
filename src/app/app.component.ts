@@ -31,4 +31,30 @@ export class AppComponent {
   onDestroyFirst() {
     this.serverElements.splice(0, 1);
   }
+
+
+  // Assignment 4
+
+  oddNumber: number[] = []
+  evenNumber: number[] = []
+  
+  onIntervalFired(firedNumber: number){
+    if (firedNumber%2 === 0){
+      this.evenNumber.push(firedNumber)
+    }
+    else{
+      this.oddNumber.push(firedNumber) 
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
